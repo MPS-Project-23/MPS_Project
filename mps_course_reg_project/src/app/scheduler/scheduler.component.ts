@@ -87,7 +87,9 @@ export class SchedulerComponent implements OnInit {
       // You may add a CSS class to these sections
       let info = event.getEventSources
       console.log("eveee", event)
-      //$('.fc-event-draggable').addClass('highlighted');
+      $('.fc-event-draggable').addClass('highlighted fc-helper-container');
+
+      console.log($('.fc-event-draggable'));
      
 
     },
