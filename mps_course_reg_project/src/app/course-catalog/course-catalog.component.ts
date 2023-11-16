@@ -12,46 +12,51 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CourseCatalogComponent implements OnInit {
   @ViewChild('autoCompleteInput') autoCompleteInput!: ElementRef;
-  
+
   searchValue: any;
   searchPlaceholder = "Enter course number, instructor name, major, keywords";
   showPlaceholder: boolean = true;
   courseList = course_catalog;
 
+  apiData: any;
+
   ngOnInit(): void {
+    this.loadPosts();
   }
 
   focusInput() {
     this.autoCompleteInput.nativeElement.focus();
   }
 
-  filteredItems:any[] = [];
+  filteredItems: any[] = [];
 
   filterCourses(event: any) {
-    this.filteredItems = this.courseList.data.filter((item:any) =>
+    this.filteredItems = this.courseList.data.filter((item: any) =>
       item.name.toLowerCase().includes(event.query.toLowerCase())
     );
   }
 
-  loseFocus(){
+  loseFocus() {
     this.showPlaceholder = true;
     this.searchValue = null;
   }
   loadPosts() {
     this.http
       .get('/data-api/rest/class_data')
-      .subscribe( (response)=> {
-          alert(JSON.stringify(response));
-    })
+      .subscribe((response) => {
+        alert(JSON.stringify(response));
+        this.apiData = response; // Store API data in variable
+        console.log(this.apiData);
+      })
   }
   constructor(
     readonly util: UtilService,
     public http: HttpClient
-  ){
+  ) {
 
   }
 
-  
+
 
   instructorOptions = [
     "Sharlene Cleare",
@@ -228,8 +233,8 @@ export class CourseCatalogComponent implements OnInit {
     }
   }
 
-  clearAll(){
-    this.items.map((item:any)=> {
+  clearAll() {
+    this.items.map((item: any) => {
       item.selectedGroup = [];
       item.selectAllItems = false;
     })
