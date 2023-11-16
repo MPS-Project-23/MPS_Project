@@ -39,7 +39,7 @@ export class CourseCatalogComponent implements OnInit {
   }
   loadPosts() {
     this.http
-      .get('https://lemon-forest-095346910.4.azurestaticapps.net/data-api/rest/class_data')
+      .get('/data-api/rest/class_data')
       .subscribe( (response)=> {
           alert(JSON.stringify(response));
     })
