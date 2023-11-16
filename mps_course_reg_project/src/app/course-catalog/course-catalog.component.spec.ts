@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClient } from '@angular/common/http';
 
 import { CourseCatalogComponent } from './course-catalog.component';
 

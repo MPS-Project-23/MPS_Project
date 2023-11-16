@@ -2,6 +2,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { course_catalog } from '../data';
 import { UtilService } from '../util.service';
 import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-course-catalog',
@@ -35,8 +37,21 @@ export class CourseCatalogComponent implements OnInit {
     this.showPlaceholder = true;
     this.searchValue = null;
   }
+  loadPosts() {
+    this.http
+      .get('https://lemon-forest-095346910.4.azurestaticapps.net/data-api/rest/class_data')
+      .subscribe( (response)=> {
+          alert(JSON.stringify(response));
+    })
+  }
+  constructor(
+    readonly util: UtilService,
+    public http: HttpClient
+  ){
 
-  constructor(public util: UtilService) { }
+  }
+
+  
 
   instructorOptions = [
     "Sharlene Cleare",
