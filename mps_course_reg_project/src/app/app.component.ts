@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UtilService } from './util.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +14,19 @@ export class AppComponent implements OnInit{
   userDetails:any = {}
 
   constructor(
-    readonly util: UtilService
+    readonly util: UtilService,
+    public http: HttpClient
   ){
 
   }
 
+  loadPosts() {
+    this.http
+      .get('https://lemon-forest-095346910.4.azurestaticapps.net/data-api/rest/class_data')
+      .subscribe( (response)=> {
+          alert(JSON.stringify(response));
+    })
+  }
   ngOnInit(): void {
       this.userDetails = this.util.getUserInfo();
   }
@@ -25,4 +34,6 @@ export class AppComponent implements OnInit{
   onToggle(event: any) {
     this.sidebarVisible = event.checked;
   }
+
+  
 }
