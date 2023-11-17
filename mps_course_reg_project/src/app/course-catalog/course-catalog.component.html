@@ -70,6 +70,10 @@
         </div>
     </div>
     <button id="course" (click)="loadPosts()" class="bth" role = "button">See data</button>
+    <div *ngFor="let course of courses">
+        <h1>{{course.course_name}}</h1>
+        <h2>{{course.course_num}}</h2>
+    </div>
 
 
 </div>

@@ -40,13 +40,15 @@ export class CourseCatalogComponent implements OnInit {
     this.showPlaceholder = true;
     this.searchValue = null;
   }
+  courses: any[] = []
   loadPosts() {
     this.http
       .get('/data-api/rest/class_data')
-      .subscribe((response) => {
-        alert(JSON.stringify(response));
-        this.apiData = response; // Store API data in variable
-        console.log(this.apiData);
+      .subscribe((courses: any) => {
+        this.courses = courses;
+        // alert(JSON.stringify(response));
+        // this.apiData = response; // Store API data in variable
+        // console.log(this.apiData);
       })
   }
   constructor(
