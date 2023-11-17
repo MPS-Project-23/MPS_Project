@@ -54,9 +54,7 @@ export class CourseCatalogComponent implements OnInit {
   constructor(
     readonly util: UtilService,
     public http: HttpClient
-  ) {
-
-  }
+  ) {  }
 
 
 

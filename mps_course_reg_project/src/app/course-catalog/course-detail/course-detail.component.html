@@ -1,5 +1,5 @@
 
-<div class="course-detail flex flex-column w-full">
+<!-- <div class="course-detail flex flex-column w-full">
     <div class="flex flex-row justify-content-between align-items-center w-full">
         <div class="flex flex-row" *ngFor="let course of courses">
             <h3 class="subject-code" style="text-decoration:underline;">
@@ -14,7 +14,13 @@
             </h3>
         </div>
     </div>
+</div> -->
+
+<div *ngFor="let course of courses">
+    <h1>{{course.course_name}}</h1>
+    <h2>{{course.course_num}}</h2>
 </div>
+
 
 <p>Sonia's work</p>
 <div class="course-detail flex flex-column w-full">

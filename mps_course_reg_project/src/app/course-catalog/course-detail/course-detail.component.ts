@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import * as moment from 'moment';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'course-detail',
@@ -58,4 +60,19 @@ export class CourseDetailComponent implements OnChanges{
     }
     return returnString;
   }
+
+  constructor( public http: HttpClient ) {  }
+  courses: any = [];
+  loadPosts() {
+    this.http
+      .get('/data-api/rest/class_data')
+      .subscribe((courses: any) => {
+        this.courses = courses.value;
+        console.log(courses.value);
+        console.log(typeof courses.value);
+        // alert(JSON.stringify(courses.value));
+      })
+  }
+
+  
 }
