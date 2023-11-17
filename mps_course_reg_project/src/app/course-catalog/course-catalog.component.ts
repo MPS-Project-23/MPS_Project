@@ -40,7 +40,7 @@ export class CourseCatalogComponent implements OnInit {
     this.showPlaceholder = true;
     this.searchValue = null;
   }
-  courses = [];
+  courses: any[] = [];
   loadPosts() {
     this.http
       .get('/data-api/rest/class_data')
