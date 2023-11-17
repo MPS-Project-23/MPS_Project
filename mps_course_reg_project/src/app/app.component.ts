@@ -13,20 +13,8 @@ export class AppComponent implements OnInit{
   sidebarVisible: boolean = false;
   userDetails:any = {}
 
-  constructor(
-    readonly util: UtilService,
-    public http: HttpClient
-  ){
+  constructor(readonly util: UtilService){}
 
-  }
-
-  loadPosts() {
-    this.http
-      .get('https://lemon-forest-095346910.4.azurestaticapps.net/data-api/rest/class_data')
-      .subscribe( (response)=> {
-          alert(JSON.stringify(response));
-    })
-  }
   ngOnInit(): void {
       this.userDetails = this.util.getUserInfo();
   }
