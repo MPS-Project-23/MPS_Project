@@ -45,9 +45,9 @@ export class CourseCatalogComponent implements OnInit {
     this.http
       .get('/data-api/rest/class_data')
       .subscribe((courses: any) => {
-        this.courses = courses;
-        console.log(courses);
-        console.log(typeof courses);
+        this.courses = courses.value;
+        console.log(courses.value);
+        console.log(typeof courses.value);
         alert(JSON.stringify(courses.value));
       })
   }
