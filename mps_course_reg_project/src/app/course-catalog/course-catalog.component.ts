@@ -48,7 +48,7 @@ export class CourseCatalogComponent implements OnInit {
         this.courses = courses.value;
         console.log(courses.value);
         console.log(typeof courses.value);
-        alert(JSON.stringify(courses.value));
+        // alert(JSON.stringify(courses.value));
       })
   }
   constructor(
