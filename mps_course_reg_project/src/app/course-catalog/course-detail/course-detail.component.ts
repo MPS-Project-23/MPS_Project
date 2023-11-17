@@ -45,6 +45,9 @@ export class CourseDetailComponent implements OnChanges{
     else 
       return a+"/"+b+" Open";
   }
+  ngOnInit(): void {
+    this.loadPosts();
+  }
 
   formatDayString(item:any, isDay:boolean){
     let returnString = "";
@@ -70,6 +73,7 @@ export class CourseDetailComponent implements OnChanges{
         this.courses = courses.value;
         console.log(courses.value);
         console.log(typeof courses.value);
+        console.log()
         // alert(JSON.stringify(courses.value));
       })
   }
