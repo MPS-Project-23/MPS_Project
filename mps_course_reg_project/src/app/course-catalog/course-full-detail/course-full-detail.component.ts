@@ -144,12 +144,12 @@ export class CourseFullDetailComponent implements OnChanges {
       this.prerequisites = courseD.prerequisites;
       this.checkingPrerequisite();
       this.checkRestrictions();
-      this.prerequisites = this.prerequisites.reduce((result: any, item: any, index: any) => {
-        if (index !== 0) {
-          result += ', ';
-        }
-        return result + item;
-      }, '');
+      // this.prerequisites = this.prerequisites.reduce((result: any, item: any, index: any) => {
+      //   if (index !== 0) {
+      //     result += ', ';
+      //   }
+      //   return result + item;
+      // }, '');
 
     }
   }
