@@ -31,8 +31,8 @@
     }
   },
   "entities": {
-    "Person": {
-      "source": "dbo.MyTestPersonTable",
+    "class_data": {
+      "source": "class_data",
       "permissions": [
         {
           "actions": [
