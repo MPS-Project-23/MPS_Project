@@ -84,7 +84,7 @@ export class WeeklyScheduleComponent implements OnChanges, OnInit {
   }
 
   ngOnChanges(_changes: SimpleChanges): void {
-    this.formatData(this.classes)
+    // this.formatData(this.classes)
 
 
     this.calendarOptions = {

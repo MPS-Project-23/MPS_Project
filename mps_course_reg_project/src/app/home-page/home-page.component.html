@@ -37,9 +37,9 @@
                     <span class="font-semibold pr-3">This Week's Schedule</span>
                     <span class="font-semibold text-400">{{week}}</span>
                 </div>
-                <div *ngIf="registeredClasses.length !== 0; else weeklySchedule" style="height: 300px;">
+                <!-- <div *ngIf="registeredClasses.length !== 0; else weeklySchedule" style="height: 300px;">
                     <weekly-schedule [classes]="registeredClasses"></weekly-schedule>
-                </div>
+                </div> -->
                 <ng-template #weeklySchedule >
                     <div class="grid flex w-full ml-2 pt-8 text-600 justify-content-center">
                         No classes registered
