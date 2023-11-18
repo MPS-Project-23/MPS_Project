@@ -321,7 +321,7 @@ export class SchedulerComponent implements OnInit {
   }
 
   calendarConfig(scheduleData: any) {
-    this.formatDataStructure(scheduleData);
+    // this.formatDataStructure(scheduleData);
     if (this.fullcalendar) {
       this.fullcalendar?.getApi().destroy();
     }

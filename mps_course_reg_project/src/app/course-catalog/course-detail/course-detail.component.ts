@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class CourseDetailComponent implements OnChanges{
 
   @Input() courseDetail: any;
-  @Output() wishlistedCourse = new EventEmitter<any>();
+  // @Output() wishlistedCourse = new EventEmitter<any>();
   @Output() addedCourse = new EventEmitter<any>();
   sidebarVisible: boolean = false;
   dayString:any = "";
@@ -25,7 +25,7 @@ export class CourseDetailComponent implements OnChanges{
   }
 
   onWishlistChange(event:any){
-    this.wishlistedCourse.emit(event);
+    // this.wishlistedCourse.emit(event);
   }
 
   formatTime(item:any){
