@@ -1,4 +1,4 @@
-<p-sidebar #sideBar [(visible)]="sidebarVisible" position="right" [style]="{width: '50%'}" [baseZIndex]="10000"
+<!-- <p-sidebar #sideBar [(visible)]="sidebarVisible" position="right" [style]="{width: '50%'}" [baseZIndex]="10000"
     (onHide)="onDialogClose()">
     <ng-template pTemplate="header">
 
@@ -37,9 +37,9 @@
         </h2>
         <p-message class="pb-2" *ngIf="!meetsPrereq" severity="info"
             text="You do not meet the prerequisites for this course."></p-message>
-        <p-message class="pb-2" *ngIf="!meetsRestrictions" severity="info" [text]="restrictionMessage"></p-message>
-        <!--course description-->
-        <p-panel header="Course Description" class="flex flex-row w-full" [toggleable]="true">
+        <p-message class="pb-2" *ngIf="!meetsRestrictions" severity="info" [text]="restrictionMessage"></p-message> -->
+<!--course description-->
+<!-- <p-panel header="Course Description" class="flex flex-row w-full" [toggleable]="true">
             <p style="font-size: small;">
                 {{ courseDetail.description }}
             </p>
@@ -53,9 +53,9 @@
 
         <h3 style="margin-bottom:0px;">
             Enrollment Information
-        </h3>
-    <!--lecture details-->
-    <div class="flex flex-row justify-content-between mt-3 grid">
+        </h3> -->
+<!--lecture details-->
+<!-- <div class="flex flex-row justify-content-between mt-3 grid">
         <div class="flex flex-row col w-full justify-content-between">
             <div class="grid flex flex-row w-full">
                 <div class="flex flex-wrap col-2 pr-0">
@@ -94,9 +94,9 @@
             &nbsp;
             <span [ngClass]="(courseDetail.lectureDetail.vacancy === courseDetail.lectureDetail.capacity) ? 'full-dot' : 'vacancy-dot'"></span>
         </div>
-    </div>
-    <!--discussion details-->
-    <!-- <div class="flex flex-row justify-content-between mt-1 grid" *ngFor="let course of courseDetail.discussionItems">
+    </div> -->
+<!--discussion details-->
+<!-- <div class="flex flex-row justify-content-between mt-1 grid" *ngFor="let course of courseDetail.discussionItems">
         <div class="flex flex-row col w-full py-0 justify-content-between">
             <div class="grid flex flex-row py-0 w-full">
                 <div class="flex flex-wrap col-2 pr-0">
@@ -137,14 +137,14 @@
                 [ngClass]="(course.vacancy === course.capacity) ? 'full-dot' : 'vacancy-dot'"></span>
         </div>
     </div> -->
-        <hr class="line" width="100%" />
-        <!--workload breakdown-->
-        <h3 style="margin-bottom:0px;">
+<!-- <hr class="line" width="100%" /> -->
+<!--workload breakdown-->
+<!-- <h3 style="margin-bottom:0px;">
             Workload: {{courseDetail.workload.hours}} Hrs
-        </h3>
-        <div class="flex flex-row mt-3">
-            <!--lecture breakdown-->
-            <div class="flex flex-column">
+        </h3> -->
+<!-- <div class="flex flex-row mt-3"> -->
+<!--lecture breakdown-->
+<!-- <div class="flex flex-column">
                 <span style="font-size:small; font-weight:500;">
                     Lecture
                 </span>
@@ -154,9 +154,9 @@
                     </div>
                 </div>
 
-            </div>
-            <!--assignment breakdown-->
-            <div class="flex flex-column">
+            </div> -->
+<!--assignment breakdown-->
+<!-- <div class="flex flex-column">
                 <span style="font-size:small; font-weight:500;">
                     Individual Assignments
                 </span>
@@ -166,9 +166,9 @@
                     </div>
                 </div>
 
-            </div>
-            <!--project breakdown-->
-            <div class="flex flex-column">
+            </div> -->
+<!--project breakdown-->
+<!-- <div class="flex flex-column">
                 <span style="font-size:small; font-weight:500;">
                     Group Projects
                 </span>
@@ -182,16 +182,16 @@
 
         </div>
     </div>
-    <ng-template pTemplate="footer" *ngIf="showAddButton">
-        <!-- <p-toggleButton (onChange)="addRemoveWishlist()" [(ngModel)]="wishlisted" offLabel="Add to Wishlist"
+    <ng-template pTemplate="footer" *ngIf="showAddButton"> -->
+<!-- <p-toggleButton (onChange)="addRemoveWishlist()" [(ngModel)]="wishlisted" offLabel="Add to Wishlist"
             onLabel="Remove from Wishlist" offIcon="pi pi-heart" onIcon="pi pi-heart-fill"
             [style]="{ width: 'fit-content' }" class="pr-5 wishlist-course"></p-toggleButton> -->
 
-        <button #btn type="button" pButton icon="pi pi-calendar-plus" label="Add/Remove Course on Scheduler"
+<!-- <button #btn type="button" pButton icon="pi pi-calendar-plus" label="Add/Remove Course on Scheduler"
             (click)="menu.toggle($event)" [ngClass]="added ? 'added-course' : 'add-course'"></button>
         <p-tieredMenu [styleClass]="'custom-tiered-menu'" [style]="{ 'z-index': '10001'}" #menu
-            [model]="addCourseOptions" [popup]="true"></p-tieredMenu>
-        <!-- <p-tieredMenu #menu [model]="addCourseOptions" [popup]="true" [styleClass]="'custom-tiered-menu'" [style]="{ 'z-index': '10001'}">
+            [model]="addCourseOptions" [popup]="true"></p-tieredMenu> -->
+<!-- <p-tieredMenu #menu [model]="addCourseOptions" [popup]="true" [styleClass]="'custom-tiered-menu'" [style]="{ 'z-index': '10001'}">
             <ng-template let-item pTemplate="item">
               <li [ngClass]="{'bg-color': isExistingItem(item.label)}">
                 <a class="p-menuitem-link">
@@ -201,14 +201,14 @@
               </li>
             </ng-template>
           </p-tieredMenu> -->
-        <p-dialog [appendTo]="sideBar" [modal]="true" header="Add to Schedule" [(visible)]="displayListbox" [style]="{ width: '30vw', height: '300px' }" [draggable]="false">
+<!-- <p-dialog [appendTo]="sideBar" [modal]="true" header="Add to Schedule" [(visible)]="displayListbox" [style]="{ width: '30vw', height: '300px' }" [draggable]="false">
             <div class="flex py-2 justify-content-center align-items-start w-full flex-column">
                 <small class="pb-2 text-600">Select Schedule to add to:</small>
                 <p-listbox [(ngModel)]="addedSchedules" optionLabel="name" [listStyle]="{ 'max-height': '250px' }" class="w-full"
-                    [options]="userSchedules" [multiple]="true" [metaKeySelection]="false" (onChange)="addToSchedule(addedSchedules)"></p-listbox>
-                <!-- <p-button (click)="saveInput()" [label]="buttonLabel" [icon]="buttonIcon" [disabled]="saving"
+                    [options]="userSchedules" [multiple]="true" [metaKeySelection]="false" (onChange)="addToSchedule(addedSchedules)"></p-listbox> -->
+<!-- <p-button (click)="saveInput()" [label]="buttonLabel" [icon]="buttonIcon" [disabled]="saving"
                     styleClass="p-button-sm save-button pl-2"></p-button> -->
-            </div>
+<!-- </div>
         </p-dialog>
         <p-dialog [modal]="true" header="Create Schedule" [(visible)]="showInputBoxFlag" [style]="{ width: '30vw' }" [draggable]="false"
             (onHide)="inputText = ''">
@@ -227,4 +227,4 @@
             </div>
         </p-dialog>
     </ng-template>
-</p-sidebar>
+</p-sidebar> -->
