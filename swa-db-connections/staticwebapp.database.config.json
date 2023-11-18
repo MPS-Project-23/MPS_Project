@@ -5,7 +5,7 @@
     "options": {
       "set-session-context": false
     },
-    "connection-string": "Server=tcp:delta-team.database.windows.net,1433;Initial Catalog=class_registration;Persist Security Info=False;User ID=delta_team;Password=classREGISTRATION!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;;"
+    "connection-string": "Server=tcp:delta-team.database.windows.net,1433;Initial Catalog=class_registration;Persist Security Info=False;User ID=delta_team;Password=classREGISTRATION!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
   },
   "runtime": {
     "rest": {
