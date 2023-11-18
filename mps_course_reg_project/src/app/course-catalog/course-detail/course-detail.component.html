@@ -57,7 +57,8 @@
         </div>
     </div>
     <div class="flex flex-row w-full pr-4" style="font-size: small;">
-        {{ courseDetail.course_description | slice:0:200 }}{{courseDetail.course_description.length > 200 ? '...' : ''}}
+        {{ courseDetail.course_description | slice:0:200 }}
+        <!-- {{courseDetail.course_description.length > 200 ? '...' : ''}} -->
     </div>
 
     <!--lecture details-->

@@ -69,6 +69,7 @@ export class CourseFullDetailComponent implements OnChanges {
     })
   }
 
+  // here is where u should do the post request 
   addToSchedule(event: any) {
     console.log("event", event)
     this.addedSchedules.length > 0 ? this.added = true : this.added = false;

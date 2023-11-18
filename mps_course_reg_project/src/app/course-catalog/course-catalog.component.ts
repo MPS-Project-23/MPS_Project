@@ -196,6 +196,7 @@ export class CourseCatalogComponent implements OnInit {
     this.instructors = filtered;
   }
 
+  // this is the function that u should edit MEDHA
   filterChanged(item: any) {
     if (item.selectedGroup.length !== item.options.length) {
       item.selectAllItems = false;
