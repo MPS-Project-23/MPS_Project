@@ -31,8 +31,8 @@
     }
   },
   "entities": {
-    "department": {
-      "source": "department",
+    "class": {
+      "source": "class",
       "permissions": [
         {
           "actions": [
