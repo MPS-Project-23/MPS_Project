@@ -21,7 +21,8 @@ export class CourseCatalogComponent implements OnInit {
   apiData: any;
 
   ngOnInit(): void {
-    this.loadPosts();
+    this.getCourseData();
+    this.getClassData;
   }
 
   focusInput() {
@@ -41,7 +42,7 @@ export class CourseCatalogComponent implements OnInit {
     this.searchValue = null;
   }
   courses: any = [];
-  loadPosts() {
+  getCourseData() {
     this.http
       .get('/data-api/rest/class_data')
       .subscribe((courses: any) => {
@@ -51,6 +52,17 @@ export class CourseCatalogComponent implements OnInit {
         // alert(JSON.stringify(courses.value));
       })
   }
+
+  classes: any = [];
+  getClassData() {
+    this.http
+      .get('/data-api/rest/class')
+      .subscribe((classes: any) => {
+        this.classes = classes.value;
+        console.log(classes.value);
+      })
+  }
+
   constructor(
     readonly util: UtilService,
     public http: HttpClient

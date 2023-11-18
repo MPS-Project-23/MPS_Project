@@ -62,22 +62,6 @@ export class CourseDetailComponent implements OnChanges{
     return returnString;
   }
 
-  // ngOnInit(): void {
-  //   this.loadPosts();
-  // }
-  // // constructor( public http: HttpClient ) {  }
-  // courses: any = [];
-  // loadPosts() {
-  //   this.http
-  //     .get('/data-api/rest/class_data')
-  //     .subscribe((courses: any) => {
-  //       this.courses = courses.value;
-  //       console.log(courses.value);
-  //       console.log(typeof courses.value);
-  //       console.log()
-  //       // alert(JSON.stringify(courses.value));
-  //     })
-  // }
 
   
 }
