@@ -139,7 +139,7 @@ export class CourseFullDetailComponent implements OnChanges {
       this.userSchedules = user.schedules;
       this.isExistingItem(this.courseDetail.subjectCode, this.courseDetail.courseCode);
       let courseD = this.courseDetail;
-      this.addedSchedules.length > 0 ? this.added = true : this.added = false;
+      // this.addedSchedules.length > 0 ? this.added = true : this.added = false;
       this.checkIfWishlisted() ? this.wishlisted = true : this.wishlisted = false;
       this.prerequisites = courseD.prerequisites;
       this.checkingPrerequisite();
@@ -187,16 +187,16 @@ export class CourseFullDetailComponent implements OnChanges {
     let coursePrerequisite: any = this.courseDetail.prerequisites;
     let containsBoth = true;
     let containsItem = true;
-    for (let i = 0; i < coursePrerequisite.length; i++) {
-      let item: any = coursePrerequisite[i];
-      if (item.includes('and')) {
-        const elements = item.split('and').map((it: any) => it.trim());
-        containsBoth = elements.every((it: any) => coursesTaken.includes(it));
-      }
-      else {
-        containsItem = coursesTaken.includes(item);
-      }
-    }
+    // for (let i = 0; i < coursePrerequisite.length; i++) {
+    //   let item: any = coursePrerequisite[i];
+    //   if (item.includes('and')) {
+    //     const elements = item.split('and').map((it: any) => it.trim());
+    //     containsBoth = elements.every((it: any) => coursesTaken.includes(it));
+    //   }
+    //   else {
+    //     containsItem = coursesTaken.includes(item);
+    //   }
+    // }
     if (containsBoth || containsItem)
       this.meetsPrereq = true;
   }

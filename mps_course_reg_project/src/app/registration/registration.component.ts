@@ -91,26 +91,26 @@ export class RegistrationComponent implements OnInit {
     });
     let containsBoth = true;
     let containsItem = true;
-    for (let i = 0; i < this.selectedCoursesToRegister.length; i++) {
-      let course: any = this.selectedCoursesToRegister[i];
-      let coursePrerequisite: any = course.prerequisites;
-      for (let i = 0; i < coursePrerequisite.length; i++) {
-        let item: any = coursePrerequisite[i];
-        if (item.includes('and')) {
-          const elements = item.split('and').map((it: any) => it.trim());
-          containsBoth = elements.every((it: any) => coursesTaken.includes(it));
-        }
-        else {
-          containsItem = coursesTaken.includes(item);
-        }
-      }
-      if (containsBoth || containsItem)
-        this.meetsPrereq = true;
+    // for (let i = 0; i < this.selectedCoursesToRegister.length; i++) {
+    //   let course: any = this.selectedCoursesToRegister[i];
+    //   let coursePrerequisite: any = course.prerequisites;
+    //   for (let i = 0; i < coursePrerequisite.length; i++) {
+    //     let item: any = coursePrerequisite[i];
+    //     if (item.includes('and')) {
+    //       const elements = item.split('and').map((it: any) => it.trim());
+    //       containsBoth = elements.every((it: any) => coursesTaken.includes(it));
+    //     }
+    //     else {
+    //       containsItem = coursesTaken.includes(item);
+    //     }
+    //   }
+    //   if (containsBoth || containsItem)
+    //     this.meetsPrereq = true;
 
-      if (!this.meetsPrereq)
-        break;
+    //   if (!this.meetsPrereq)
+    //     break;
 
-    }
+    // }
   }
 
   // checkRestrictions(){
