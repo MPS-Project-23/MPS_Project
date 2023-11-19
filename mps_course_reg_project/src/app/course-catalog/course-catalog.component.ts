@@ -4,8 +4,6 @@ import { UtilService } from '../util.service';
 import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
 import { HttpClient } from '@angular/common/http';
 
-
-
 @Component({
   selector: 'app-course-catalog',
   templateUrl: './course-catalog.component.html',
@@ -18,13 +16,15 @@ export class CourseCatalogComponent implements OnInit {
   searchPlaceholder = "Enter course number, instructor name, major, keywords";
   showPlaceholder: boolean = true;
   courseList = course_catalog;
+  courses: any = [];
+  classes: any = [];
 
   apiData: any;
   // http: any;
 
   ngOnInit(): void {
     this.getCourseData();
-    this.getClassData;
+    this.getClassData();
   }
 
   focusInput() {
@@ -50,7 +50,6 @@ export class CourseCatalogComponent implements OnInit {
   ) {  }
   
 
-  courses: any = [];
   getCourseData() {
     return this.http
       .get('/data-api/rest/courses')
@@ -62,7 +61,6 @@ export class CourseCatalogComponent implements OnInit {
       })
   }
 
-  classes: any = [];
   getClassData() {
     return this.http
       .get('/data-api/rest/classes')

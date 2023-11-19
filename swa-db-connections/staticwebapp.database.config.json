@@ -52,6 +52,28 @@
           "role": "anonymous"
         }
       ]
+    },
+    "classes": {
+      "source": "classes",
+      "permissions": [
+        {
+          "actions": [
+            "*"
+          ],
+          "role": "anonymous"
+        }
+      ]
     }
+  },
+  "courses": {
+    "source": "courses",
+    "permissions": [
+      {
+        "actions": [
+          "*"
+        ],
+        "role": "anonymous"
+      }
+    ]
   }
 }
