@@ -21,7 +21,7 @@
       "mode": "production",
       "cors": {
         "origins": [
-          "http://localhost:4280"
+          "http://localhost:4200"
         ],
         "allow-credentials": false
       },
