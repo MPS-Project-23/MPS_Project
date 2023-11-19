@@ -5,6 +5,7 @@ import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
 import { HttpClient } from '@angular/common/http';
 
 
+
 @Component({
   selector: 'app-course-catalog',
   templateUrl: './course-catalog.component.html',
@@ -19,6 +20,7 @@ export class CourseCatalogComponent implements OnInit {
   courseList = course_catalog;
 
   apiData: any;
+  // http: any;
 
   ngOnInit(): void {
     this.getCourseData();
@@ -41,10 +43,17 @@ export class CourseCatalogComponent implements OnInit {
     this.showPlaceholder = true;
     this.searchValue = null;
   }
+
+  constructor(
+    readonly util: UtilService,
+    public http: HttpClient
+  ) {  }
+  
+
   courses: any = [];
   getCourseData() {
-    this.http
-      .get('/data-api/rest/class_data')
+    return this.http
+      .get('/data-api/rest/courses')
       .subscribe((courses: any) => {
         this.courses = courses.value;
         console.log(courses.value);
@@ -55,18 +64,42 @@ export class CourseCatalogComponent implements OnInit {
 
   classes: any = [];
   getClassData() {
-    this.http
-      .get('/data-api/rest/class')
+    return this.http
+      .get('/data-api/rest/classes')
       .subscribe((classes: any) => {
         this.classes = classes.value;
         console.log(classes.value);
       })
   }
 
-  constructor(
-    readonly util: UtilService,
-    public http: HttpClient
-  ) {  }
+
+  async getClassResponse() {
+    return fetch('/data-api/rest/classes').then(response => response.json());
+  }
+  async getCourseResponse() {
+    return fetch('/data-api/rest/courses').then(response => response.json());
+  }
+  
+  async combineData() {
+    try {
+      const classesResp = await this.getClassResponse();
+      const courseResp = await this.getCourseResponse();
+
+      const classes = classesResp.data;
+      const courses = courseResp.data;
+    
+      // const joinedData = this.courses.map((course: any) => {
+      //   const matchedClasses = classes.filter(class => class.course_name === course.course_name);
+      //   return { ...course, orders: matchedClasses };
+      // });
+      // return joinedData;
+    } catch(error: any) {
+      console.error('Error matching classes with their courses:', error);
+      throw error;
+    }
+  }
+
+  
 
 
 
@@ -254,7 +287,7 @@ export class CourseCatalogComponent implements OnInit {
   }
 
   wishlistedCourse(event: any) {
-    this.courseList.data.forEach(element => {
+    this.courseList.data.forEach((element: { courseCode: any; wishlisted: any; }) => {
       if (element.courseCode === event.course.courseCode) {
         element.wishlisted = event.wishlisted;
       }
@@ -288,7 +321,7 @@ export class CourseCatalogComponent implements OnInit {
   }
 
   addedCourse(event: any) {
-    this.courseList.data.forEach(element => {
+    this.courseList.data.forEach((element: { courseCode: any; added: any; }) => {
       if (element.courseCode === event.course.courseCode) {
         element.added = event.added;
       }
