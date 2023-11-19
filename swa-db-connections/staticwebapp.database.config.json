@@ -42,17 +42,6 @@
         }
       ]
     },
-    "department_college": {
-      "source": "department_college",
-      "permissions": [
-        {
-          "actions": [
-            "*"
-          ],
-          "role": "anonymous"
-        }
-      ]
-    },
     "class_data": {
       "source": "class_data",
       "permissions": [
