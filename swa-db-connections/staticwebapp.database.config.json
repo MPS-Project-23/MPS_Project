@@ -31,6 +31,17 @@
     }
   },
   "entities": {
+    "department": {
+      "source": "department",
+      "permissions": [
+        {
+          "actions": [
+            "*"
+          ],
+          "role": "anonymous"
+        }
+      ]
+    },
     "class": {
       "source": "class",
       "permissions": [
@@ -63,17 +74,17 @@
           "role": "anonymous"
         }
       ]
+    },
+    "courses": {
+      "source": "courses",
+      "permissions": [
+        {
+          "actions": [
+            "*"
+          ],
+          "role": "anonymous"
+        }
+      ]
     }
-  },
-  "courses": {
-    "source": "courses",
-    "permissions": [
-      {
-        "actions": [
-          "*"
-        ],
-        "role": "anonymous"
-      }
-    ]
   }
 }
