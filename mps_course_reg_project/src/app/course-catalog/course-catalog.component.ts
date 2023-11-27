@@ -24,7 +24,7 @@ export class CourseCatalogComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCourseData();
-    this.getClassData();
+    // this.getClassData();
   }
 
   focusInput() {
