@@ -7,7 +7,9 @@
       "dataApiLocation": "swa-db-connections",
       "appBuildCommand": "npm run build",
       "run": "npm start",
-      "appDevserverUrl": "http://localhost:4200"
+      "appDevserverUrl": "http://localhost:4200",
+      "appName": "mps-project2",
+      "resourceGroup": "mps-project2-rg"
     }
   }
 }
