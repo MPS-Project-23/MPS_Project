@@ -1,0 +1,13 @@
+{
+  "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
+  "configurations": {
+    "mps-project": {
+      "appLocation": ".",
+      "outputLocation": "dist/mps_course_reg_project",
+      "dataApiLocation": "swa-db-connections",
+      "appBuildCommand": "npm run build",
+      "run": "npm start",
+      "appDevserverUrl": "http://localhost:4200"
+    }
+  }
+}
