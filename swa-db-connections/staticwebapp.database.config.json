@@ -42,17 +42,6 @@
         }
       ]
     },
-    "class": {
-      "source": "class",
-      "permissions": [
-        {
-          "actions": [
-            "*"
-          ],
-          "role": "anonymous"
-        }
-      ]
-    },
     "class_data": {
       "source": "class_data",
       "permissions": [
@@ -75,16 +64,16 @@
         }
       ]
     },
-    "courses": {
-      "source": "courses",
-      "permissions": [
-        {
-          "actions": [
-            "*"
-          ],
-          "role": "anonymous"
-        }
-      ]
-    }
+  "courses": {
+    "source": "courses",
+    "permissions": [
+      {
+        "actions": [
+          "*"
+        ],
+        "role": "anonymous"
+      }
+    ]
   }
+}
 }
