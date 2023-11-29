@@ -3,7 +3,7 @@
   "configurations": {
     "mps-project": {
       "appLocation": ".",
-      "outputLocation": "dist/mps_course_reg_project",
+      "outputLocation": "dist",
       "dataApiLocation": "swa-db-connections",
       "appBuildCommand": "npm run build",
       "run": "npm start",
