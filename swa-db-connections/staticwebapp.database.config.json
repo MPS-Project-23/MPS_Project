@@ -63,6 +63,17 @@
           "role": "anonymous"
         }
       ]
+    },
+    "classes": {
+      "source": "classes",
+      "permissions": [
+        {
+          "actions": [
+            "*"
+          ],
+          "role": "anonymous"
+        }
+      ]
     }
   }
 }
