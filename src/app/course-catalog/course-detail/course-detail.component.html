@@ -23,12 +23,6 @@
                 {{courseDetail.credit}} Credits
             </span>
             &nbsp;
-            <span style="font-size:small; font-weight:800;">
-                {{courseDetail.weekday}}
-            </span>
-            <span style="font-size:small; font-weight:800;">
-                {{courseDetail.first_name}} {{courseDetail.last_name}}
-            </span>
             <button class="sidebar-button" (click)="openFullDetail()">
 
                 <i class="pi pi-angle-right" style="color: darkgrey;"></i>
@@ -46,6 +40,17 @@
     <div class="flex flex-row justify-content-between mt-3 grid">
         <div class="flex flex-row col w-full justify-content-between">
             <div class="grid flex flex-row w-full">
+                
+                <div class="flex flex-wrap col-2">
+                    <span style="font-size:small; font-weight:800;">
+                        {{courseDetail.weekday}}
+                    </span>
+                </div>
+                <div class="flex flex-wrap col-3">
+                    <span style="font-size:small; font-weight:800;">
+                        {{courseDetail.first_name}} {{courseDetail.last_name}}
+                    </span>
+                </div>
                 <div class="flex flex-wrap col-2">
                     <span style="font-size:small; font-weight:800;">
                         {{courseDetail.class_type_name}} {{courseDetail.course_iden_num}}
@@ -71,7 +76,7 @@
                         <span>{{courseDetail.begin_time}}-{{courseDetail.end_time}} </span>
                     </div>
                 </div> -->
-                
+
                 <!-- <div class="flex flex-wrap col-3">
                     <div style="font-size: smaller;">
                         <span>{{courseDetail.weekday}}</span>

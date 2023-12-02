@@ -5,11 +5,11 @@
         <h1 class="mt-0 ml-1">Search for courses</h1>
         <div class="flex flex-column h-full">
             <div class="grid flex w-full ml-2">
-                <!-- <span class="p-input-icon-left w-full">
+                <span class="p-input-icon-left w-full">
                     <i class="pi pi-search"></i>
                     <input class="w-full search-field" type="text" pInputText [(ngModel)]="searchValue"
                         placeholder="{{searchPlaceholder}}" />
-                </span> -->
+                </span>
                 <span class="p-input-icon-left w-full">
                     <p-autoComplete class="relative flex w-full" [ngStyle]="{'width': '350px'}"
                         [(ngModel)]="searchValue" [suggestions]="filteredItems" (completeMethod)="filterCourses($event)"
