@@ -65,16 +65,15 @@ export class CourseDetailComponent implements OnChanges{
   }
 
 
-  convertWeekday(weekdayList:any) {
-  var weekdayDict = new Object();
-  weekdayDict = {"M": "Mon", "T": "Tue", "W": "Wed", "R": "Thu", "F": "Fri" };
+  convertWeekday(weekdayList: string[]): string {
+  var weekdayDict: Record<string, string> = {M: "Mon", T: "Tue", W: "Wed", R: "Thu", F: "Fri" };
   var weekdays = Array.from(weekdayList);
   var weekdayAcryns = "";
 
   weekdays.forEach((w) => 
   {weekdayAcryns = weekdayAcryns  + " ," + weekdayDict[w]; }
   );
-
+  return weekdayAcryns;
   }
   
 }
