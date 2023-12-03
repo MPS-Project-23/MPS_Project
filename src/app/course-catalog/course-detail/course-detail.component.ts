@@ -71,7 +71,7 @@ export class CourseDetailComponent implements OnChanges{
   var weekdayAcryns = "";
 
   weekdays.forEach((w) => 
-  {weekdayAcryns = weekdayAcryns  + " ," + weekdayDict[w]; }
+  {weekdayAcryns = weekdayAcryns  + " " + weekdayDict[w]; }
   );
   return weekdayAcryns;
   }
