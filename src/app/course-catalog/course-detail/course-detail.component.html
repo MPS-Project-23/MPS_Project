@@ -50,23 +50,23 @@
                         <span>{{convertWeekday(courseDetail.weekday)}} </span>
                     </div>
                 </div>
-                <div class="flex flex-wrap col-3">
+                <div class="flex flex-wrap col-2">
                     <div style="font-size: smaller;">
                         <span>{{courseDetail.begin_time}}-{{courseDetail.end_time}}</span>
                     </div>
                 </div>
-                <div class="flex flex-wrap col-3">
+                <div class="flex flex-wrap col-2">
                     <div style="font-size: smaller;">
                         <span>{{courseDetail.last_name}}, {{courseDetail.first_name}}</span>
                     </div>
                 </div>
 
-                <div style="font-size: smaller; color:darkgrey" class="flex align-items-start col-2">
+                <div style="font-size: smaller; color:darkgrey" class="flex align-items-start col-3">
                     {{courseDetail.expectation}} expectation
                 </div>
             </div>  
         </div>
-        <div class="flex align-items-start col-fixed justify-content-end m-0 pl-0" style="width: 100px;">
+        <div class="flex align-items-start col-fixed justify-content-end m-0 pl-0" style="width: 120px;">
             <span style="font-size: smaller;">{{checkCapacity(courseDetail.enrolled,courseDetail.capacity)}}</span>
             &nbsp;
             <span [ngClass]="(courseDetail.enrolled === courseDetail.capacity) ? 'full-dot' : 'vacancy-dot'"></span>
